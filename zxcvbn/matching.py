@@ -29,8 +29,8 @@ def dictionary_match(password, ranked_dict):
 
     pw_lower = password.lower()
 
-    for i in xrange(0, length):
-        for j in xrange(i, length):
+    for i in range(length):
+        for j in range(i, length):
             word = pw_lower[i:j+1]
             if word in ranked_dict:
                 rank = ranked_dict[word]
