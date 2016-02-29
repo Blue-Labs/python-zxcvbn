@@ -1,4 +1,5 @@
-
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
 try:
     import simplejson as json
     json # silence pyflakes
@@ -71,7 +72,7 @@ def build_graph(layout_str, slanted):
             position_table[(x,y)] = token
 
     adjacency_graph = {}
-    for (x,y), chars in position_table.items():
+    for (x,y), chars in list(position_table.items()):
         for char in chars:
             adjacency_graph[char] = []
             for coord in adjacency_func(x, y):
